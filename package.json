@@ -18,6 +18,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "precommit": "flow check && lint-staged",
   "browserslist": [
     ">0.2%",
     "not dead",

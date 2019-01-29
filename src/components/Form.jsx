@@ -1,6 +1,14 @@
 import React from "react";
 
-class Form extends React.Component {
+type Props = {
+  handleFormSubmit: Function,
+};
+
+type State = {|
+  task: string,
+|};
+
+class Form extends React.Component <Props, State> {
   state = {
     task: '',
   };

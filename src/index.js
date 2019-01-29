@@ -1,23 +1,33 @@
+// @flow
 import React from "react";
 import ReactDOM from "react-dom";
 import Form from "./components/Form.jsx";
 import ToDoList from "./components/ToDoList.jsx";
 import generateRandomColor from './utils';
 
-class App extends React.Component {
+export type ToDo = {|
+  task: string,
+  color: string,
+|};
+
+type State = {|
+  tasks: Array<ToDo>,
+|};
+
+class App extends React.Component <{}, State> {
   state = {
     tasks: []
   };
 
-  handleFormSubmit = (e, task) => {
+  handleFormSubmit = (e: SyntheticEvent<HTMLButtonElement>, task: string) => {
     e.preventDefault();
-    let itemToAdd = { task: task, color: generateRandomColor(new Date()) };
+    const itemToAdd = { task: task, color: generateRandomColor(new Date()) };
     this.setState(({ tasks }) => ({
       tasks: [...tasks, itemToAdd],
     }));
   }
 
-  deleteTask = (idx) => {
+  deleteTask = (idx: number) => {
     this.setState(({ tasks }) => ({
       tasks: [...tasks.slice(0, idx), ...tasks.slice(idx + 1)],
     }));
@@ -33,5 +43,12 @@ class App extends React.Component {
   }
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+const root = document.getElementById('root')
+if (root !== null) {
+  ReactDOM.render(<App /> , root)
+}
+
+// OR:
+
+// $FlowFixMe
+// ReactDOM.render(<App /> , root)
