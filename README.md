@@ -2,6 +2,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### `flow check`
+
+Run command 'flow check' in the root directory to see the current issues
+
 In the project directory, you can run:
 
 ### `npm start`

@@ -1,3 +1,4 @@
+// @flow
 const pickAShadeOfBlue = (x) => x > 50 ? '#06CCFD' : 'blue';
 
 const trulyRandom = () => {
