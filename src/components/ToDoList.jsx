@@ -1,4 +1,3 @@
-// @flow
 import React from "react";
 
 const ToDoList = ({ tasks, deleteTask }) => (
