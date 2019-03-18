@@ -1,4 +1,6 @@
-import React from "react";
+import * as React from "react";
+;
+;
 class Form extends React.Component {
     constructor() {
         super(...arguments);
@@ -15,10 +17,10 @@ class Form extends React.Component {
     }
     render() {
         const { task } = this.state;
-        return (<form onSubmit={(e) => this.handleSubmit(e, task)} style={{ marginBottom: '15px' }}>
-        <input type="text" name="task" value={task} onChange={this.handleChange} style={{ marginRight: '10px' }}/>
-        <input type="submit" name="submit" value="Add To Do"/>
-      </form>);
+        return (React.createElement("form", { onSubmit: (e) => this.handleSubmit(e, task), style: { marginBottom: '15px' } },
+            React.createElement("input", { type: "text", name: "task", value: task, onChange: this.handleChange, style: { marginRight: '10px' } }),
+            React.createElement("input", { type: "submit", name: "submit", value: "Add To Do" })));
     }
 }
 export default Form;
+//# sourceMappingURL=Form.js.map

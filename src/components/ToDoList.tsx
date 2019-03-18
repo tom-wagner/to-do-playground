@@ -1,10 +1,11 @@
-import React from "react";
+import * as React from "react";
+import { Task } from '../index';
 
-const ToDoList = ({ tasks, deleteTask }) => (
+const ToDoList = ({ tasks, deleteTask }: { tasks: Array<Task>, deleteTask: Function }) => (
   <ul>
     {tasks.map((item, idx) =>
       <li key={idx} style={{ marginBottom: '10px', color: item.color }} onClick={() => deleteTask(idx)} >
-      {item.task}
+        {item.task}
       </li>
     )}
   </ul>

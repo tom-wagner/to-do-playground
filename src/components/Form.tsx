@@ -1,15 +1,20 @@
-import React from "react";
+import * as React from "react";
+import { Task } from '../index';
 
-class Form extends React.Component {
+export interface Props { handleFormSubmit: Function };
+export interface State { task: string };
+
+
+class Form extends React.Component <Props, State> {
   state = {
     task: '',
   };
 
-  handleChange = (e) => {
+  handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ task: e.target.value });
   }
 
-  handleSubmit = (e, task) => {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>, task: string) => {
     this.props.handleFormSubmit(e, task);
     this.setState({ task: '' });
   }

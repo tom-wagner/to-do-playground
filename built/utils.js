@@ -11,3 +11,4 @@ const generateRandomColor = (date) => {
     return pickAShadeOfBlue(Math.random() * 100);
 };
 export default generateRandomColor;
+//# sourceMappingURL=utils.js.map

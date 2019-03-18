@@ -1,13 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import Form from "./components/Form.js";
 import ToDoList from "./components/ToDoList.js";
 import generateRandomColor from './utils';
+;
+;
 class App extends React.Component {
     constructor() {
         super(...arguments);
         this.state = {
-            tasks: []
+            tasks: [] // TODO: Read about this syntax
         };
         this.handleFormSubmit = (e, task) => {
             e.preventDefault();
@@ -23,11 +25,11 @@ class App extends React.Component {
         };
     }
     render() {
-        return (<div className="App">
-        <Form handleFormSubmit={this.handleFormSubmit}/>
-        <ToDoList tasks={this.state.tasks} deleteTask={this.deleteTask}/>
-      </div>);
+        return (React.createElement("div", { className: "App" },
+            React.createElement(Form, { handleFormSubmit: this.handleFormSubmit }),
+            React.createElement(ToDoList, { tasks: this.state.tasks, deleteTask: this.deleteTask })));
     }
 }
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(React.createElement(App, null), rootElement);
+//# sourceMappingURL=index.js.map

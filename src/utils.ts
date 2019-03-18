@@ -1,11 +1,11 @@
-const pickAShadeOfBlue = (x) => x > 50 ? '#06CCFD' : 'blue';
+const pickAShadeOfBlue = (x: number): string => x > 50 ? '#06CCFD' : 'blue';
 
-const trulyRandom = () => {
+const trulyRandom = (): string => {
   const [r, g, b] = (['', '', ''].map(x => Math.ceil(Math.random() * 255)));
   return `rgb(${r}, ${g}, ${b})`;
 };
 
-const generateRandomColor = (date) => {
+const generateRandomColor = (date: Date): string => {
   const thisVariableCouldBeOddOrEven = date.getUTCSeconds();
   if (thisVariableCouldBeOddOrEven % 2 === 0) {
     return trulyRandom();
