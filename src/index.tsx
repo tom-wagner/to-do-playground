@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Form from "./components/Form.js";
-import ToDoList from "./components/ToDoList.js";
+import Form from "./components/Form";
+import ToDoList from "./components/ToDoList";
 import generateRandomColor from './utils';
 import { string } from "prop-types";
 
