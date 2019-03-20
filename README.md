@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#### _When you fork this repo make sure to run `npm i`_
+
 ## Available Scripts
 
 ### `flow check`
