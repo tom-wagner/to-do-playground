@@ -3,14 +3,13 @@ import * as ReactDOM from "react-dom";
 import Form from "./components/Form";
 import ToDoList from "./components/ToDoList";
 import generateRandomColor from './utils';
-import { string } from "prop-types";
 
-export interface State { tasks: Array<Task> };
-export interface Task { task: string, color: string };
+export type Task = { task: string, color: string };
+type State = { tasks: Array<Task> };
 
 class App extends React.Component <{},State> {
   state = {
-    tasks: [] as Array<Task> // TODO: Read about this syntax
+    tasks: [],
   };
 
   handleFormSubmit = (e: React.FormEvent<HTMLInputElement>, task: string) => {

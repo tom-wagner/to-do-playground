@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Task } from '../index';
 
 const ToDoList = ({ tasks, deleteTask }: { tasks: Array<Task>, deleteTask: Function }) => (

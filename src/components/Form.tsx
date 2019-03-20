@@ -1,9 +1,7 @@
 import * as React from "react";
-import { Task } from '../index';
 
-export interface Props { handleFormSubmit: Function };
-export interface State { task: string };
-
+type Props = { handleFormSubmit: Function };
+type State = { task: string };
 
 class Form extends React.Component <Props, State> {
   state = {
