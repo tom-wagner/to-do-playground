@@ -1,7 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Form from "./components/Form.jsx";
-import ToDoList from "./components/ToDoList.jsx";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import Form from "./components/Form";
+import ToDoList from "./components/ToDoList";
 import generateRandomColor from './utils';
 
 class App extends React.Component {
