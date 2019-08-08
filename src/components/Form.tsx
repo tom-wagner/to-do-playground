@@ -1,6 +1,10 @@
 import * as React from "react";
 
-class Form extends React.Component {
+type Props = { handleFormSubmit: (e: React.FormEvent, task: string) => void };
+
+type State = { task: string };
+
+class Form extends React.Component <Props, State> {
   state = {
     task: '',
   };

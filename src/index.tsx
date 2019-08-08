@@ -4,9 +4,11 @@ import Form from "./components/Form";
 import ToDoList from "./components/ToDoList";
 import generateRandomColor from './utils';
 
-class App extends React.Component {
+type State = { tasks: Array<any> }; // can we do better?
+
+class App extends React.Component <{}, State> {
   state = {
-    tasks: []
+    tasks: [],
   };
 
   handleFormSubmit = (e, task) => {
