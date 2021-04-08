@@ -1,10 +1,10 @@
 import React from "react";
 import { Task } from '../index';
 
-const ToDoList = ({ tasks, deleteTask }: { tasks: Array<Task>, deleteTask: Function }) => (
+const ToDoList = (props: { tasks: Array<Task>, deleteTask: (idx: number) => void }) => (
   <ul>
-    {tasks.map((item, idx) =>
-      <li key={idx} style={{ marginBottom: '10px', color: item.color }} onClick={() => deleteTask(idx)} >
+    {props.tasks.map((item, idx) =>
+      <li key={idx} style={{ marginBottom: '10px', color: item.color }} onClick={() => props.deleteTask(idx)} >
         {item.task}
       </li>
     )}

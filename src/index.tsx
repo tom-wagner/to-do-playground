@@ -14,15 +14,17 @@ class App extends React.Component <{},State> {
 
   handleFormSubmit = (e: React.FormEvent<HTMLInputElement>, task: string) => {
     e.preventDefault();
-    let itemToAdd = { task: task, color: generateRandomColor(new Date()) };
-    this.setState(({ tasks }) => ({
-      tasks: [...tasks, itemToAdd],
+    
+    const itemToAdd = { task: task, color: generateRandomColor() };
+    
+    this.setState((state, prevState) => ({
+      tasks: [...state.tasks, itemToAdd],
     }));
   }
 
   deleteTask = (idx: number) => {
-    this.setState(({ tasks }) => ({
-      tasks: [...tasks.slice(0, idx), ...tasks.slice(idx + 1)],
+    this.setState((state, prevState) => ({
+      tasks: [...state.tasks.slice(0, idx), ...state.tasks.slice(idx + 1)],
     }));
   }
 
