@@ -4,15 +4,15 @@ import Form from "./components/Form";
 import ToDoList from "./components/ToDoList";
 import generateRandomColor from './utils';
 
-export type Task = { task: string, color: string };
-type State = { tasks: Array<Task> };
+export type Task = any;
+type State = { tasks: any };
 
-class App extends React.Component <{},State> {
+class App extends React.Component <{}, State> {
   state = {
     tasks: [],
   };
 
-  handleFormSubmit = (e: React.FormEvent<HTMLInputElement>, task: string) => {
+  handleFormSubmit = (e: any, task: any) => {
     e.preventDefault();
     
     const itemToAdd = { task: task, color: generateRandomColor() };
@@ -22,7 +22,7 @@ class App extends React.Component <{},State> {
     }));
   }
 
-  deleteTask = (idx: number) => {
+  deleteTask = (idx: any) => {
     this.setState((state, prevState) => ({
       tasks: [...state.tasks.slice(0, idx), ...state.tasks.slice(idx + 1)],
     }));

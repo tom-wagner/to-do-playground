@@ -1,18 +1,18 @@
 import * as React from "react";
 
-type Props = { handleFormSubmit: Function };
-type State = { task: string };
+type Props = any;
+type State = { task: any };
 
 class Form extends React.Component <Props, State> {
   state = {
     task: '',
   };
 
-  handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  handleChange = (e: any) => {
     this.setState({ task: e.target.value });
   }
 
-  handleSubmit = (e: React.FormEvent<HTMLFormElement>, task: string) => {
+  handleSubmit = (e: any, task: any) => {
     this.props.handleFormSubmit(e, task);
     this.setState({ task: '' });
   }

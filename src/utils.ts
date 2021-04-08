@@ -1,4 +1,4 @@
-const generateRandomColor = (): string => {
+const generateRandomColor = (): any => {
   const [r, g, b] = (['', '', ''].map(x => Math.ceil(Math.random() * 255)));
   return `rgb(${r}, ${g}, ${b})`;
 };
